@@ -6,13 +6,15 @@ jobs:
 
   my-job:
     runs-on: windows-latest
-
-    steps:
+    
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Step 1
-        run: Write-Output "This is My Job"
+        run: Write-Output "Starting the server"
 
       - name: Step 2
-        run: Write-Output "Hello from My Job"
+        run: node server.js
 
 
   second-job:
@@ -20,7 +22,7 @@ jobs:
 
     steps:
       - name: Step 1
-        run: Write-Output "This is Second Job"
+        run: Write-Output "Stopping the server"
 
       - name: Step 2
-        run: Write-Output "Hello from Second Job"
+        run: Write-Output "exit"
