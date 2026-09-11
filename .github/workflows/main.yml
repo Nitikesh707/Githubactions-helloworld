@@ -1,23 +1,26 @@
-name: checkout-code
+name: multiple-jobs
 
 on: push
 
 jobs:
+
   my-job:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Step 1
+        run: Write-Output "This is My Job"
 
-      - name: Start application
-        run: node server.js
+      - name: Step 2
+        run: Write-Output "Hello from My Job"
 
-      - name: List repository files
-        run: Write-Output "Now closing MF"
 
-      - name: Sleepmf
-        run: Start-Sleep 100
+  second-job:
+    runs-on: windows-latest
 
-      - name: Stop
-        run: Exit
+    steps:
+      - name: Step 1
+        run: Write-Output "This is Second Job"
+
+      - name: Step 2
+        run: Write-Output "Hello from Second Job"
