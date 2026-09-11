@@ -1,6 +1,7 @@
 name: checkout-code
 
 on: push
+
 jobs:
   my-job:
     runs-on: windows-latest
@@ -13,10 +14,10 @@ jobs:
         run: node server.js
 
       - name: List repository files
-        run: Write-Output "Now closing MF'
+        run: Write-Output "Now closing MF"
 
-        -name Sleepmf
+      - name: Sleepmf
         run: Start-Sleep 100
 
-        -name stop
+      - name: Stop
         run: Exit
