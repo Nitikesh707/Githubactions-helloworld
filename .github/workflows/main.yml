@@ -1,7 +1,6 @@
 name: checkout-code
 
 on: push
-
 jobs:
   my-job:
     runs-on: windows-latest
