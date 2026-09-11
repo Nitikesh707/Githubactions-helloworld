@@ -1,17 +1,22 @@
-name: multiple-jobs
+name: "custom-nodejs
 
 on: push
 
 jobs:
-  my-job:
-    runs-on: windows-latest
+ first-job:
+  runs-on: windows-letest
+  steps:
+   - name: checkout-registry
+     runs: action/checkout@v7
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+   - name: download-nodejs
+     usese: action/setup-node@v7
+     with:
+      node-version:'24'
+  
+   - name: check-version
+     runs: node --version
 
-      - name: Start server
-        run: |
-          $process = Start-Process node -ArgumentList "server.js" -PassThru
-          Start-Sleep 10
-          Stop-Process -Id $process.Id
+   - name: run-server
+     runs: node server.js
+     
