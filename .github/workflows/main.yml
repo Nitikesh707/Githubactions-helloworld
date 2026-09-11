@@ -1,4 +1,4 @@
-name: hello-world
+name: system-info
 
 on: push
 
@@ -7,11 +7,14 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Step 1
-        run: echo "Hello World!"
+      - name: Show message
+        run: echo "Hello from GitHub Actions"
 
-      - name: Step 2
-        run: echo "I am learning GitHub Actions"
+      - name: Check PowerShell version
+        run: $PSVersionTable.PSVersion
 
-      - name: Step 3
-        run: echo "This is my second workflow"
+      - name: Show current directory
+        run: Get-Location
+
+      - name: List files
+        run: Get-ChildItem
