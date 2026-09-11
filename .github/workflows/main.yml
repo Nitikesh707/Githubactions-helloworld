@@ -1,22 +1,21 @@
-name: "custom-nodejs
+name: "custom-nodejs"
 
 on: push
 
 jobs:
  first-job:
-  runs-on: windows-letest
+  runs-on: windows-latest
   steps:
    - name: checkout-registry
-     runs: action/checkout@v7
+     run: actions/checkout@v7
 
    - name: download-nodejs
-     usese: action/setup-node@v7
+     uses: actions/setup-node@v7
      with:
-      node-version:'24'
+      node-version: '24'
   
    - name: check-version
-     runs: node --version
+     run: node --version
 
    - name: run-server
-     runs: node server.js
-     
+     run: node server.js
