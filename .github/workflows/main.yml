@@ -1,4 +1,4 @@
-name: system-info
+name: checkout-code
 
 on: push
 
@@ -7,14 +7,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Show message
-        run: echo "Hello from GitHub Actions"
-
-      - name: Check PowerShell version
-        run: $PSVersionTable.PSVersion
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Show current directory
-        run: Get-Location
+        run: server.js
 
-      - name: List files
+      - name: List repository files
         run: Get-ChildItem
