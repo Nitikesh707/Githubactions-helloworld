@@ -7,7 +7,7 @@ jobs:
   runs-on: windows-latest
   steps:
    - name: checkout-registry
-     run: actions/checkout@v7
+     uses: actions/checkout@v7
 
    - name: download-nodejs
      uses: actions/setup-node@v7
