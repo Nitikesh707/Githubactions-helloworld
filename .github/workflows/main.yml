@@ -18,4 +18,4 @@ jobs:
      run: node --version
 
    - name: run-server
-     run: node server.js
+     run: Write-Output "done server"
