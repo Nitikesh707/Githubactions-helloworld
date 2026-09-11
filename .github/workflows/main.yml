@@ -10,8 +10,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show current directory
-        run: server.js
+      - name: Start application
+        run: node server.js
 
       - name: List repository files
         run: Get-ChildItem
